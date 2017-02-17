@@ -9,11 +9,19 @@
   </head>
 
   <body>
+    <div class="navbar navbar-default header-stuff">
+      <% if user_signed_in? %>
+        <p>
+          Hello <%= current_user.name %> - <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete'%>
+        </p>
+      <% else %>
+        <%= link_to 'Sign In', new_user_session_path %>
+      <% end %>
+
+      <%= link_to 'Back to home', posts_path, :class => "btn btn-primary home-btn" %>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if user_signed_in? %>
-    <p>Hello, <%= current_user.name %> - <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete'%></p>
-    <% end %>
     <%= yield %>
   </body>
 </html>

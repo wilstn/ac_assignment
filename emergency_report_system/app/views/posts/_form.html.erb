@@ -1,8 +1,7 @@
-<div class="input-form">
-  <%= bootstrap_form_for @post do |f| %>
-    <%= f.text_field :headline %>
-    <%= f.text_field :category %>
-    <%= f.text_field :content %>
-    <%= f.submit "Submit" %>
-  <% end %>
-</div>
+<%= bootstrap_form_for @post do |f| %>
+  <%= f.text_field :headline %>
+  <%= f.select :category, ["Latest News", "Resources", "Need Help"] %>
+  <%= f.text_area :content %>
+  <%= f.submit "Submit" %>
+<% end %>
+<%= link_to 'Back', posts_path %>

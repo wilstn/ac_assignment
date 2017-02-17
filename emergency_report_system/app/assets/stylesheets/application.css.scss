@@ -16,3 +16,20 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.main-posts, .input-form{
+  width: 60%;
+  margin: auto;
+  .post-content{
+    height: 300px;
+  }
+}
+.each-post, .each-comment, .log-in-pages{
+  width: 60%;
+  margin: auto;
+}
+.header-stuff{
+  text-align: right;
+  margin: 10px;
+  padding: 10px;
+}

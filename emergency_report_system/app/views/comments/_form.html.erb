@@ -1,6 +1,6 @@
 <%= bootstrap_form_for [@post, @comment] do |f| %>
   <%= f.text_field :author %>
-  <%= f.text_field :entry %>
+  <%= f.text_area :entry %>
   <%= f.submit 'Submit' %>
 <% end %>
 <%= link_to 'Back', post_path(@post) %>

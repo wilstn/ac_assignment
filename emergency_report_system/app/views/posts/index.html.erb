@@ -1,10 +1,20 @@
-<h1>List of emergency posts</h1>
+<div class="main-posts">
+  <h1>List of emergency posts</h1>
 
-<%= link_to 'New emergency', new_post_path %><br>
+  <%= link_to 'New emergency', new_post_path %><br>
 
-<% @posts.each do |post| %>
-  <%= post.headline %>
-  <%= post.category %>
-  <%= post.content %>
-  <%= link_to "Details", post_path(post) %>
-<% end %>
+  <% @posts.each do |post| %>
+    <h3>
+      <%= post.headline %>
+    </h3>
+    <p>
+      Category: <%= post.category %>
+    </p>
+    <article>
+      <%= post.content %>
+    </article>
+    
+    <%= link_to "Details", post_path(post) %>
+  <% end %>
+
+</div>
