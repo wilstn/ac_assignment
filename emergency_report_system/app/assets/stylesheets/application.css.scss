@@ -20,13 +20,24 @@
 .main-posts, .input-form{
   width: 60%;
   margin: auto;
-  .post-content{
+  #post_content{
     height: 300px;
   }
 }
 .each-post, .each-comment, .log-in-pages{
   width: 60%;
   margin: auto;
+}
+.each-comment{
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 15px;
+}
+.post-wrapper{
+  // border-width: thin;
+  // border-style: double;
+  // padding: 15px;
 }
 .header-stuff{
   width: 60%;

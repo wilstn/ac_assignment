@@ -4,23 +4,25 @@
   <%= link_to 'New emergency', new_post_path, :class => "btn btn-danger" %><br>
 
   <% @posts.each do |post| %>
-    <h3>
-      <%= post.headline %>
-    </h3>
-    <p>
-      By <%= post.user.email %>
-    </p>
-    <p>
-      Posted on <%= post.created_at.strftime("%d %b %y at %T") %>
-    </p>
-    <p>
-      Category: <%= post.category %>
-    </p>
-    <article>
-      <%= post.content %>
-    </article>
-
-    <%= link_to "Details", post_path(post) %>
+    <div class="post-wrapper col-xs-6">
+      <h3>
+        <%= post.headline %>
+      </h3>
+      <p>
+        By <%= post.user.email %>
+      </p>
+      <p>
+        Posted on <%= post.created_at.strftime("%d %b %y at %T") %>
+      </p>
+      <p>
+        Category: <%= post.category %>
+      </p>
+      <article>
+        <%= truncate(post.content, length: 200){ link_to "More", post_path(post) } %>
+      </article>
+      <br>
+      <% comment_count = post.comments.count %>
+      <%= link_to "#{comment_count} Comments", post_path(post) %>
+    </div>
   <% end %>
-
 </div>

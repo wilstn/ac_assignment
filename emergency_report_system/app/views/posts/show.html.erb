@@ -30,10 +30,12 @@
   <hr>
 </div>
 
-<% @post.comments.each do |comment| %>
+
+
+<% @post.comments.order('created_at DESC').each do |comment| %>
   <div class="each-comment">
     <p>
-      By <%= comment.author %>
+      By <%= "#{comment.author} ( #{comment.user.email} )" %>
     </p>
     <p>
       Posted on <%= comment.created_at.strftime("%d %b %y at %T") %>
@@ -41,11 +43,11 @@
     <article>
       <%= comment.entry %>
     </article>
+    <br>
     <% if current_user == comment.user%>
         <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>
         <span>&nbsp;|&nbsp;</span>
         <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: {confirm: 'Are you sure?'} %>
     <% end %>
-    <br>
   </div>
 <% end %>
