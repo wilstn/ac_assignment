@@ -3,6 +3,9 @@
     <%= @post.headline %>
   </h2>
   <p>
+    By <%= @post.user.email %>
+  </p>
+  <p>
     Posted on <%= @post.created_at.strftime("%d %b %y at %T") %>
   </p>
   <p>
@@ -22,7 +25,8 @@
   <% end %>
   <%= link_to 'Add comment', new_post_comment_path(@post) %>
   <br>
-  <h2>Comments</h2>
+  <% comment_count = @post.comments.count%>
+  <h2><%= "#{comment_count} Comments"%></h2>
   <hr>
 </div>
 

@@ -29,11 +29,17 @@
   margin: auto;
 }
 .header-stuff{
-  text-align: right;
-  margin: 10px;
-  padding: 10px;
+  width: 60%;
+  margin: auto;
+  a{
+    margin: 10px 0;
+  }
+  p{
+    float: right;
+    margin-top: 15px;
+  }
 }
 .alert-messages{
-  width: 80%;
+  width: 60%;
   margin: auto;
 }

@@ -8,6 +8,9 @@
       <%= post.headline %>
     </h3>
     <p>
+      By <%= post.user.email %>
+    </p>
+    <p>
       Posted on <%= post.created_at.strftime("%d %b %y at %T") %>
     </p>
     <p>

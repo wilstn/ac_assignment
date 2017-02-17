@@ -9,21 +9,25 @@
   </head>
 
   <body>
-    <div class="navbar navbar-default header-stuff">
-      <% if user_signed_in? %>
-        <p>
-          Hello <%= current_user.email %> - <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete'%>
-        </p>
-      <% else %>
-        <%= link_to 'Sign In', new_user_session_path %>
-      <% end %>
+    <div class="navbar navbar-default">
+      <div class="header-stuff">
+        <% if user_signed_in? %>
+          <p>
+            Hello <%= current_user.email %> - <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete'%>
+          </p>
+        <% else %>
+          <%= link_to 'Sign In', new_user_session_path, :class => "btn btn-default home-btn pull-right" %>
+        <% end %>
 
-      <%= link_to 'Back to home', posts_path, :class => "btn btn-primary home-btn" %>
+        <%= link_to 'Back to home', posts_path, :class => "btn btn-primary home-btn pull-left" %>
+      </div>
     </div>
-    <div class="alert-messages">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
+    <% if notice %>
+      <div class="notice alert-messages"><%= notice %></div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-messages alert-success"><%= alert %></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
