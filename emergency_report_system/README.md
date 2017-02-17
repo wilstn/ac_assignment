@@ -1,24 +1,11 @@
-# README
+# Assignment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Design an "Emergency reporting system."
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Features
+* User can post "Emergency" messages.
+* Categories included: Latest news, Resources, Need help.
+* User can view all post by headline and date time posted.
+* User can comment on the post.
+* User can view individual posts.
+* User can edit and delete their comments/posts.
