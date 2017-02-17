@@ -37,13 +37,11 @@
     <article>
       <%= comment.entry %>
     </article>
-
-    <% if can? :update, comment %>
-      <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>
-      <span>&nbsp;|&nbsp;</span>
+    <% if current_user == comment.user%>
+        <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>
+        <span>&nbsp;|&nbsp;</span>
+        <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: {confirm: 'Are you sure?'} %>
     <% end %>
-    <% if can? :destroy, comment %>
-      <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: {confirm: 'Are you sure?'} %>
-    <% end %>
+    <br>
   </div>
 <% end %>

@@ -12,7 +12,7 @@
     <div class="navbar navbar-default header-stuff">
       <% if user_signed_in? %>
         <p>
-          Hello <%= current_user.name %> - <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete'%>
+          Hello <%= current_user.email %> - <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete'%>
         </p>
       <% else %>
         <%= link_to 'Sign In', new_user_session_path %>
@@ -20,8 +20,10 @@
 
       <%= link_to 'Back to home', posts_path, :class => "btn btn-primary home-btn" %>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="alert-messages">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
     <%= yield %>
   </body>
 </html>

@@ -1,7 +1,7 @@
 <div class="main-posts">
   <h1>List of emergency posts</h1>
 
-  <%= link_to 'New emergency', new_post_path %><br>
+  <%= link_to 'New emergency', new_post_path, :class => "btn btn-danger" %><br>
 
   <% @posts.each do |post| %>
     <h3>
@@ -13,7 +13,7 @@
     <article>
       <%= post.content %>
     </article>
-    
+
     <%= link_to "Details", post_path(post) %>
   <% end %>
 
