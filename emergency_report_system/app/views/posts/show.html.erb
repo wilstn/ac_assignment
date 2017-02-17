@@ -3,7 +3,7 @@
     <%= @post.headline %>
   </h2>
   <p>
-    Posted on <%= @post.created_at.strftime("%d %b %y") %>
+    Posted on <%= @post.created_at.strftime("%d %b %y at %T") %>
   </p>
   <p>
     <%= @post.category %>
@@ -32,7 +32,7 @@
       By <%= comment.author %>
     </p>
     <p>
-      Posted on <%= comment.created_at.strftime("%d %b %y") %>
+      Posted on <%= comment.created_at.strftime("%d %b %y at %T") %>
     </p>
     <article>
       <%= comment.entry %>
